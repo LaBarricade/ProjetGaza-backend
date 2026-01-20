@@ -1,0 +1,18 @@
+{
+  "name": "migrations",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "baserow_to_sql_async.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.6.0",
+    "csv-parse": "^6.1.0",
+    "pg-native": "^3.5.2",
+    "sqlite3": "^5.1.7"
+  }
+}
