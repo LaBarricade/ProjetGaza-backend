@@ -44,4 +44,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-migration-scripts/source-data/*
+/migration-scripts/source-data/*
+/migration-scripts/todo.txt
+/migration-scripts/old/
+/migration-scripts/old.git/
+/migration-scripts/node_modules/
