@@ -12,6 +12,18 @@ import {parse as parseCsv} from "csv-parse/sync";
 const client = new Client();
 client.connectSync('postgresql://postgres:6k1StOu7K0uK3RLH@db.aemsrwloiirgovavfzdb.supabase.co:5432/postgres');
 
+
+/**
+ * 1/ Récupérer le fichier ici : https://data.assemblee-nationale.fr/acteurs/deputes-en-exercice
+ * 2/ "Fichier CSV - Liste des députés en format Libre Office"
+ * 3/ Renommer les champs comme suit :
+ * "id","firstname","lastname","region","department","num_circo","job","political_group_long","political_group_short"
+"795998","Émeline","K/Bidi","Réunion","Réunion","4","Avocate","Gauche Démocrate et Républicaine","GDR"
+"796106","Édouard","Bénard","Normandie","Seine-Maritime","3","Collaborateur d'élu","Gauche Démocrate et Républicaine","GDR"
+ */
+const sourceFile = 'source-data/liste-politiques-20260119/liste_deputes_libre_office.csv';
+
+
 function dbQuery(sql, params = []) {
     console.log('SQL : ', sql, params);
     const res = client.querySync(sql, params);
@@ -60,4 +72,4 @@ function insertAllDeputies(csvFile) {
     console.log(array[0], array[1]);
 }
 
-insertAllDeputies('liste-politiques-20260119/liste_deputes_libre_office.csv');
+insertAllDeputies(sourceFile);
