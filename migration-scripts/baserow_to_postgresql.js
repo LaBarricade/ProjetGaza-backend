@@ -13,7 +13,7 @@ import { execSync } from 'child_process';
 
 //const sourceFilePath = 'source-data/migration 20260100/export_b9717722-9924-4fb5-8045-7d077b758dc3/database__7291bbe3ec8c4783bf61a9d4c0473f06_476027d5455f3b30fe0d3c7df867e15c53ecc16b1d73e57c2df32e490b93a8b6.json'
 const sourceFilePath = 'source-data/migration 20260120/database__776606b9107d4af4b7ebe69fae43c6c2_4f0adcf8fe53b4cb84611e5a645c038c5c222f2a64c94ba561db22195b518014.json'
-const dbUrl = 'postgresql://postgres:6k1StOu7K0uK3RLH@db.aemsrwloiirgovavfzdb.supabase.co:5432/postgres';
+const dbUrl = process.env.SUPABASE_CONN_URL;
 const client = new Client();
 client.connectSync(dbUrl);
 
